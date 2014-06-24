@@ -1,0 +1,88 @@
+Comenzi git:
+
+initializare: 
+
+	git init  -directory now has an empty repository in /.git/. The repository is a hidden directory where Git operates.
+
+project status: 
+
+	git status
+
+adaugare fisier 'untracked' :
+
+	git add fisier.txt
+
+	--The files listed here are in the Staging Area, and they are not in our repository yet. We could add or remove files from the stage before we store them in the repository.
+add in repository:
+
+	git commit -m "Add cute octocat story"   
+
+adaugare directoare cu fisiere:
+
+	git add '*.txt'
+
+add in repository:
+
+	git commit -m 'Add all the octocat txt files'
+
+browse the repository to see what we changed:
+
+	git log
+
+This command takes a remote name and a repository URL, which in your case is https://github.com/try-git/try_git.git:
+
+	git remote add origin https://github.com/try-git/try_git.git
+
+The push command tells Git where to put our commits when we're ready.The name of our remote is origin and the default local branch name is master. The -u tells Git to remember the parameters, so that next time we can simply run git push and Git will know what to do. 
+
+	git push -u origin master
+
+Let's pretend some time has passed. We've invited other people to our github project who have pulled your changes, made their own commits, and pushed them. We can check for changes on our GitHub repository and pull down any new changes by running:
+
+	 git pull origin master
+
+Uh oh, looks like there has been some additions and changes to the octocat family. Let's take a look at what is different from our last commit by using the git diff command.In this case we want the diff of our most recent commit, which we can refer to using the HEAD pointer.
+
+	git diff HEAD
+
+run git diff with the --staged option to see the changes you just staged:
+	
+	git diff --staged
+
+unstage files:
+
+	git reset file.txt
+
+Files can be changed back to how they were at the last commit by using the command: git checkout -- <target>
+
+	git checkout -- file.txt
+
+create a branch:
+
+	git branch branch_name
+
+see the branches you have: 
+
+	git branch
+
+ You can switch branches using the git checkout <branch> command.
+
+ 	git checkout branch_name
+
+Removing All The Things:
+
+	git rm '*.txt'
+
+merge the changes from two branches:
+
+	git merge second_branch  ---the first branch is the main one
+
+You can use git branch -d <branch name> to delete a branch
+
+	git branch -d branch name
+
+push everything you've been working on to your remote repository
+
+	git push
+
+	
